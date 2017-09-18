@@ -42,7 +42,7 @@ class Person {
      */
     
   Person perish(IPet none) {
-  	return new Person(this.name, none, this.age);
+    return new Person(this.name, none, this.age);
   }
 }
 
@@ -53,11 +53,11 @@ interface IPet {
 
 //to represent no pet
 class NoPet implements IPet {
-	NoPet() {}
+  NoPet() {}
 	
-	public boolean sameNamePet(String name) {
-		return false;
-	}
+  public boolean sameNamePet(String name) {
+    return false;
+  }
 }
 
 // to represent a pet cat
@@ -82,7 +82,7 @@ class Cat implements IPet {
 */
     
   public boolean sameNamePet(String name) {
-  	return this.name == name;
+    return this.name == name;
   }
 }
 
@@ -108,7 +108,7 @@ class Dog implements IPet {
 */
     
   public boolean sameNamePet(String name) {
-   return this.name == name;
+    return this.name == name;
   }
 }
 
@@ -117,7 +117,7 @@ class ExamplesIPet {
   ExamplesIPet () {}
     
     //Examples of pets
-	IPet none  = new NoPet();
+  IPet none  = new NoPet();
   IPet bella = new Dog("Bella", "dalmatian", false);
   IPet bart = new Dog("Bartolome", "shih tzu", true);
   IPet momon = new Cat("Salmon", "siamese", false);
@@ -134,27 +134,27 @@ class ExamplesIPet {
     
     //test the method isOlder for the class Person
   boolean testIsOlder(Tester t) {
-   	return
-    	t.checkExpect(this.one.isOlder(two), false) &&
- 	    t.checkExpect(this.two.isOlder(one), true) &&
+    return
+      t.checkExpect(this.one.isOlder(two), false) &&
+      t.checkExpect(this.two.isOlder(one), true) &&
       t.checkExpect(this.three.isOlder(two), false) &&
       t.checkExpect(this.four.isOlder(one), true) &&
       t.checkExpect(this.one.isOlder(three), true);
   }
     
   boolean testSameNamePet(Tester t) {
-  	return
-  		t.checkExpect(this.nigell.sameNamePet("Nigell"), true) &&
-   	  t.checkExpect(this.bella.sameNamePet("Bell"), false);
+    return
+      t.checkExpect(this.nigell.sameNamePet("Nigell"), true) &&
+      t.checkExpect(this.bella.sameNamePet("Bell"), false);
   }
     
   Person three2 = new Person("Jezza", none, 18);
   Person four2 = new Person("Chaelle", none, 26);
     
   boolean testPerish(Tester t) {
-  	return
-   	  t.checkExpect(this.three.perish(none), three2) &&
-  		t.checkExpect(this.four.perish(none), four2);
+    return
+      t.checkExpect(this.three.perish(none), three2) &&
+      t.checkExpect(this.four.perish(none), four2);
   }
 }
 
